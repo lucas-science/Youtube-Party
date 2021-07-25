@@ -27,14 +27,23 @@ io.on("connection", (socket) => {
             socket.emit('authorORnot', true)
             const user = userJoin(socket.id, room, url, true);
             socket.join(user.room);
+
+            let test2 = users.filter(user => user.room === room);
+            socket.emit('nbrMembre', test2.length)
+            socket.broadcast.to(user.room).emit('nbrMembre', test2.length)
         } else {
             socket.emit('authorORnot', false)
             const user = userJoin(socket.id, room, url, false);
             socket.join(user.room);
+
+            let test2 = users.filter(user => user.room === room);
+            socket.emit('nbrMembre', test2.length)
+            socket.broadcast.to(user.room).emit('nbrMembre', test2.length)
             console.log("you re got an invitation")
         }
 
         console.log(users)
+
 
         socket.broadcast.to(user.room).emit('info', "has joined the chat " + room);
 
@@ -58,6 +67,11 @@ io.on("connection", (socket) => {
         if (user) {
             // Send users and room info
             io.to(user.room).emit('info', "il a été deconnecté");
+
+            let room = user.room
+
+            let test2 = users.filter(user => user.room === room);
+            socket.broadcast.to(user.room).emit('nbrMembre', test2.length)
             console.log(users)
             if (users[0]) {
                 users[0].author = true

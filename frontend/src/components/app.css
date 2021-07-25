@@ -1,0 +1,161 @@
+.app-corps {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.app-part-gauche {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.app-chefTorF {
+    background-color: tomato;
+    width: auto;
+    margin-left: 7.75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7.5%;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.932);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0%;
+    width: 100%;
+    margin-left: 7.5%;
+}
+
+.video {
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    border-radius: 20px;
+    box-shadow: 0px 4px 85px -5px #100B28;
+}
+
+.app-part-droite {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.app-membre-nbr {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.253);
+}
+
+.app-membre-nbr-txt {
+    margin-right: 2%;
+}
+
+.app-nbrmembre-logo {
+    margin-right: 2%;
+}
+
+.app-chatroom {
+    width: 85%;
+    height: 85%;
+    background-color: #13111E;
+    border-radius: 12.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.app-chat {
+    /*background-color: tomato;*/
+    width: 97.5%;
+    height: 85%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.app-items {
+    padding-left: 15px;
+    padding-bottom: 15px;
+    /*background-color: teal;*/
+}
+
+.app-username {
+    font-size: 19px;
+    color: rgba(255, 255, 255, 0.705);
+    margin-left: 5px;
+}
+
+.app-message {
+    font-size: 17px;
+    color: white;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+    transition: 0.2s;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: rgb(90, 90, 90);
+    transition: 0.2s;
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: rgb(59, 59, 59);
+    transition: 0.2s;
+}
+
+.app-message-inps {
+    width: 97.5%;
+    height: 5.5%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5%;
+}
+
+.app-mess-inp {
+    width: 70%;
+    border-radius: 12.5px;
+    border: none;
+    padding-left: 20px;
+    font-size: 15px;
+    color: white;
+    background-color: #181626;
+}
+
+.app-submit-inp {
+    width: 20%;
+    border-radius: 8px;
+    border: none;
+    transition: 0.2s;
+    background-color: #181626;
+    color: white;
+}
+
+.app-submit-inp:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #1f1e31;
+}
