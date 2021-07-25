@@ -34,7 +34,7 @@ export default class shareButton extends Component {
     render() { 
       let copylink = this.state.display ? "copylink_block" : "copylink_none";
       let buttonlick = this.state.display ? "copylink-button_none" : "copylink-button_block";
-      let svg = this.state.display ? ".svg_none " : ".svg_block";
+      let svg = this.state.display ? "svg_none " : "svg_block";
       let copytext = this.state.animend ? "copytext_close" : "copytext_open"
             return (
                 <div className="sharebutton-corps">

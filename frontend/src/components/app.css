@@ -4,6 +4,114 @@
     display: flex;
 }
 
+
+/* ALERT */
+
+.app-alert-true {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+}
+
+.app-alert-false {
+    display: none;
+}
+
+.app-alert-content {
+    width: auto;
+    color: white;
+    background-color: rgb(228, 25, 42);
+    padding: 7px 15px;
+    border-radius: 8px;
+    margin-top: 5%;
+}
+
+.login-nom_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(78, 68, 133, 0.24);
+    z-index: 10;
+}
+
+.login-nom_none {
+    display: none;
+}
+
+.app-pseudo-inp {
+    outline: none;
+    border: none;
+    padding: 18px;
+    border-radius: 8px;
+    background-color: #313345;
+    color: white;
+    margin-right: 1%;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+.app-pseudo-inp::placeholder {
+    color: rgba(255, 255, 255, 0.856);
+}
+
+.app-pseudo-inp:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgba(255, 255, 255, 0.856);
+}
+
+.app-pseudo-inp::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgba(255, 255, 255, 0.856);
+}
+
+.app-pseudo-inp:focus {
+    border-radius: 4px;
+    background-color: #46495f;
+}
+
+.app-log_submit-inp {
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background-color: #5940EB;
+    padding: 18px;
+    color: white;
+    margin-left: 1%;
+    transition: 0.2s;
+    font-size: 16px;
+}
+
+.app-log_submit-inp:hover {
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4627f5;
+    transform: scale(1.05);
+}
+
+.app-log_submit-inp:active {
+    background-color: #3715fc;
+}
+
+.app-blur-true {
+    filter: blur(20px);
+}
+
+.app-blur-false {
+    filter: blur(0px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .app-part-gauche {
     width: 75%;
     display: flex;
@@ -11,17 +119,26 @@
     flex-direction: column;
 }
 
+.app-part-gauche_blur {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    filter: blur(20px);
+}
+
 .app-chefTorF {
-    background-color: tomato;
-    width: auto;
+    background-color: rgba(238, 26, 26, 0.863);
     margin-left: 7.75%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 7.5%;
+    padding: 1px;
+    width: 8%;
+    height: 30px;
     font-size: 13px;
     color: rgba(255, 255, 255, 0.932);
-    border-radius: 10px;
+    border-radius: 7px;
     margin-bottom: 10px;
 }
 
@@ -45,7 +162,7 @@
     width: 25%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-around !important;
     align-items: center;
 }
 
@@ -75,6 +192,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin: 0;
 }
 
 .app-chat {

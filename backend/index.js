@@ -17,7 +17,7 @@ const io = socketio(server, {
 io.on("connection", (socket) => {
     console.log("new client connected");
 
-    socket.on('joinRoom', (room, url) => {
+    socket.on('joinRoom', (room, url, pseudo) => {
         console.log("the room in join : ", room);
 
         const test = userLeave(socket.id);
@@ -25,7 +25,7 @@ io.on("connection", (socket) => {
         const user = []
         if (index == -1) {
             socket.emit('authorORnot', true)
-            const user = userJoin(socket.id, room, url, true);
+            const user = userJoin(socket.id, room, url, true, pseudo);
             socket.join(user.room);
 
             let test2 = users.filter(user => user.room === room);
@@ -33,7 +33,7 @@ io.on("connection", (socket) => {
             socket.broadcast.to(user.room).emit('nbrMembre', test2.length)
         } else {
             socket.emit('authorORnot', false)
-            const user = userJoin(socket.id, room, url, false);
+            const user = userJoin(socket.id, room, url, false, pseudo);
             socket.join(user.room);
 
             let test2 = users.filter(user => user.room === room);
@@ -61,6 +61,12 @@ io.on("connection", (socket) => {
         socket.broadcast.to(USER.room).emit('temps', data);
     })
 
+    socket.on('sendMessage', (mess, room) => {
+        console.log(mess)
+
+        socket.broadcast.to(room).emit('message', mess);
+    })
+
     socket.on('disconnect', () => {
         const user = userLeave(socket.id);
 
@@ -83,8 +89,8 @@ io.on("connection", (socket) => {
 
 const users = [];
 
-function userJoin(id, room, url, author) {
-    const user = { id, room, url, author };
+function userJoin(id, room, url, author, pseudo) {
+    const user = { id, room, url, author, pseudo };
     users.push(user);
     return user;
 }
