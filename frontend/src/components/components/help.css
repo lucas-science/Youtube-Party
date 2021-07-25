@@ -1,0 +1,63 @@
+.app-help {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.app-help-box {
+    width: 2%;
+    height: 1.125%;
+    background-color: hsla(249, 85%, 54%, 0.6);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    transition: 0.2s;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.app-help-box:focus {
+    background-color: hsla(249, 98%, 53%, 0.829);
+}
+
+.app-help-box:hover {
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.app-help-svg {
+    width: 100%;
+    opacity: 0.6;
+}
+
+.app-help-contentBOX {
+    width: 0%;
+    max-height: 10%;
+    background-color: hsla(249, 85%, 54%, 0.6);
+    margin-bottom: 15px;
+    margin-left: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.712);
+    animation-name: open;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.app-help-contentBOX-false {
+    display: none;
+}
+
+@keyframes open {
+    from {
+        width: 15%;
+    }
+    to {
+        width: 30%;
+    }
+}

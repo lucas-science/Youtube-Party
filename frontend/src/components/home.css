@@ -83,3 +83,22 @@ textarea:focus {
     font-size: 15px;
     color: rgba(255, 255, 255, 0.41);
 }
+
+.home-alert {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.home-alert-box {
+    background-color: rgb(228, 25, 42);
+    border-radius: 10px;
+    padding: 0px 15px;
+    color: rgba(255, 255, 255, 0.918);
+}
+
+.home-alert-none {
+    display: none;
+}

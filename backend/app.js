@@ -23,10 +23,11 @@ app.use(
 app.use('/test', (req, res, next) => {
     {
 
-        let params = new URLSearchParams('http://localhost:4000/?room=453454&video=4445v');
-        let foo = params.get('room');
-        //let foo02 = params.get('video')
-        res.send(foo, foo02)
+        var url_string = "https://www.youtube.com/watch?v=6_p3rXnYE3Y&ab_channel=Amixem"; //window.location.href
+        var url = new URL(url_string);
+        var c = url.searchParams.get("v");
+        console.log(c);
+
     }
 })
 

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Router, Link, Switch } from "react-router-dom"
 import YouTube from 'react-youtube';
 import { io } from "socket.io-client"; 
 import ShareButton from './components/shareButton'
+import Help  from './components/help';
 import './app.css'
 
 const socket = io('http://localhost:4000');
@@ -49,19 +50,7 @@ export default class app extends Component {
       scrollToBottom = () => {
         this.myRef.current.scrollIntoView({ behavior: 'smooth' })
       }
-    componentDidMount(){
-        this.setState({messages:[
-            {username:"Lucas", message:"hey ça va ?"},
-            {username:"David", message:"hey niekl et toi"},
-            {username:"Lucas", message:"super , t'en pensses quoi de cette nouvelle vidéo"},
-            {username:"David", message:"elle est grave cool !"}
-
-        ]})
-        console.log(this.state.messages)
-        /*if(this.state.loged){
-            socket.emit('joinRoom', this.props.match.params.roomid, this.props.match.params.vurl)
-        }*/
-        
+    componentDidMount(){   
         socket.on('nbrMembre', data => {
             this.setState({membre_nbr:data})
             console.log("vous etes dans le groupe : ",this.state.membre_nbr)
@@ -110,6 +99,19 @@ export default class app extends Component {
             console.log(this.state.messages)
             this.setState({new_message:true})
         })
+
+        document.addEventListener('keydown', (event) => {
+            if(event.key == 'Enter' && this.state.mess != ''){
+                console.log(this.state.mess)
+                socket.emit('sendMessage', {username : this.state.pseudo, message:this.state.mess},this.props.match.params.roomid)
+                
+                let {messages} = this.state
+                messages.push({username : this.state.pseudo, message:this.state.mess})
+                console.log(this.state.messages)
+      
+                this.setState({mess:""})
+            }
+        })
     }
  
     _onStateChange(event){
@@ -122,12 +124,12 @@ export default class app extends Component {
             }
             if (event.data === 1) {
                 console.log("video playing")
-                let time =  Math.round(event.target.getCurrentTime())
+                let time =  event.target.getCurrentTime()
                 socket.emit('time',{time:time, event:event.data})
                 this.setState({curtime:time})
                 this.setState({change:true})
                 setInterval(() => {
-                    let time =  Math.round(event.target.getCurrentTime())
+                    let time =  event.target.getCurrentTime()
                     //socket.emit('time',time)
                     socket.emit('tempsReel',time)
                     this.setState({curtime:time})
@@ -222,6 +224,7 @@ export default class app extends Component {
                             <p>{this.state.alert_content}</p>
                         </div>
                     </div>
+                    <Help/>
                     <div className="app-part-gauche" className={blurgauche}>
                         {author
                             ? <div className="app-chefTorF">
@@ -307,6 +310,7 @@ export default class app extends Component {
                                 <p>{this.state.alert_content}</p>
                             </div>
                         </div>
+                        <Help/>
                         <div className="app-part-gauche" className={blurgauche}>
                             {author
                                 ? <div className="app-chefTorF">
