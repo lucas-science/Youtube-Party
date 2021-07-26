@@ -207,7 +207,7 @@ export default class app extends Component {
                             className="app-pseudo-inp"
                             name="pseudo"
                             type="text"
-                            placeholder="Choisissez un pseudo ..."
+                            placeholder="Choose a pseudo"
                             value={this.state.pseudo}
                             onChange={this.handleInputChange}
                             required
@@ -215,7 +215,7 @@ export default class app extends Component {
                         <input
                             className="app-log_submit-inp"
                             type="submit"
-                            value="C'est parti !"
+                            value="Join"
                             onClick={this.login}
                         />
                     </div>
@@ -293,7 +293,7 @@ export default class app extends Component {
                                 className="app-pseudo-inp"
                                 name="pseudo"
                                 type="text"
-                                placeholder="Choisissez un pseudo ..."
+                                placeholder="Choose a pseudo"
                                 value={this.state.pseudo}
                                 onChange={this.handleInputChange}
                                 required
@@ -301,7 +301,7 @@ export default class app extends Component {
                             <input
                                 className="app-log_submit-inp"
                                 type="submit"
-                                value="C'est parti !"
+                                value="Join"
                                 onClick={this.login}
                             />
                         </div>

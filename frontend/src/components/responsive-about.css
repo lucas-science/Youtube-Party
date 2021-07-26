@@ -1,0 +1,44 @@
+@media only screen and (max-width:850px) {
+    .about-page1 {
+        flex-direction: column;
+        padding-top: 50%;
+    }
+    .about1-part-gauche {
+        width: 100%;
+        height: 100vh;
+    }
+    .about1-part-droite {
+        width: 100%;
+        height: 100vh;
+    }
+    /*PAGE 2*/
+    .about-page2 {
+        flex-direction: column-reverse;
+    }
+    .about2-part-gauche {
+        width: 100%;
+    }
+    .about2-part-droite {
+        width: 100%;
+    }
+    .about2-PseudoPhoto {
+        width: 80%;
+    }
+    /*PAGE 3*/
+    .about-page3 {
+        flex-direction: column;
+        padding-top: 15%;
+    }
+    .about3-part-gauche {
+        width: 100%;
+    }
+    .about3-part-droite {
+        width: 100%;
+    }
+    .about3-video-photo {
+        width: 100%;
+    }
+    .about3-texte {
+        font-size: 17px;
+    }
+}

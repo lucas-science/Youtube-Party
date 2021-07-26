@@ -3,7 +3,9 @@ import { BrowserRouter, Route, Router, Link, Switch } from "react-router-dom"
 import  { Redirect } from 'react-router-dom'
 import YouTube from 'react-youtube';
 import { io } from "socket.io-client"; 
+import HomePhone from './components/homePhone';
 import './home.css'
+import './components/home-responsive.css'
 
 const socket = io('http://localhost:4000');
 
@@ -59,6 +61,7 @@ export default class home extends Component {
         let error = this.state.error ? "home-alert" : "home-alert-none"
             return (
                 <div className="home-corps"> 
+                    <HomePhone/>
                     <div className={error}>
                         <div className="home-alert-box">
                             <p>{this.state.error_contexte}</p>
@@ -66,6 +69,9 @@ export default class home extends Component {
                     </div>
                     <div className="home-top">
                         <p className="home-titre">Youtube Party</p>
+                        <Link className="home-titre1" to="/about">
+                            <p >About</p>
+                        </Link>
                     </div>
                     <div className="home-formulaire">
                         <input
@@ -86,7 +92,7 @@ export default class home extends Component {
                             onChange={this.handleInputChange}
                             required
                         />
-                        
+                         
                                 <input
                                     className="home-submit-inp"
                                     type="submit"
