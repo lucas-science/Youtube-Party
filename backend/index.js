@@ -66,6 +66,11 @@ io.on("connection", (socket) => {
 
         socket.broadcast.to(room).emit('message', mess);
     })
+    socket.on('CheckRoomName', room => {
+        console.log("la", room)
+        let index = users.findIndex(user => user.room === room);
+        socket.emit('CheckRoomNameCallBack', index)
+    })
 
     socket.on('disconnect', () => {
         const user = userLeave(socket.id);

@@ -16,12 +16,24 @@ export default class home extends Component {
             roomname:"",
             url:"",
             error:false,
-            error_contexte:""
+            error_contexte:"",
+            c:''
         };
       }
     componentDidMount(){
         socket.on('info',message =>{
             console.log(message)
+        })
+        socket.on('CheckRoomNameCallBack', async data => {
+            if(data == -1){
+                this.props.history.push('/app/'+this.state.roomname+'/'+this.state.c)
+            } else{
+                this.setState({error:true})
+                this.setState({error_contexte:"This room name is already use"})
+                await this.sleep(1000)
+                this.setState({error:false})
+                this.setState({error_contexte:""})
+            }
         })
     }
     sleep = (milliseconds) => {
@@ -34,7 +46,6 @@ export default class home extends Component {
         });
       }
       onSubmit = async () =>{
-          //console.log(this.state.roomname, this.state.url)
         try{
             let url = new URL(this.state.url);
             let c = url.searchParams.get("v");
@@ -45,7 +56,8 @@ export default class home extends Component {
                 this.setState({error:false})
                 this.setState({error_contexte:""})
             } else{
-                this.props.history.push('/app/'+this.state.roomname+'/'+c)
+                socket.emit('CheckRoomName',this.state.roomname)
+                this.setState({c:c})
             }
         } catch{
             this.setState({error:true})
@@ -56,7 +68,6 @@ export default class home extends Component {
         }
 
       }
-
     render() {
         let error = this.state.error ? "home-alert" : "home-alert-none"
             return (
