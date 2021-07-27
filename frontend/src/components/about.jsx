@@ -86,7 +86,7 @@ export default class About extends Component {
                                     </div>
                                 </div>
                                 <div className="about3-texte">
-                                    <p>With youtube Party you can watch video in simulteaneously with your friends. But with Youtube Party you can watch together but react to the video together ! wite the tchat in the right of the video.</p>
+                                    <p>With youtube Party you can watch video in simultaneously with your friends. But with Youtube Party you can watch together but react to the video together ! wite the tchat in the right of the video.</p>
                                 </div>
                             </div>
                             <div className="about3-part-droite">
