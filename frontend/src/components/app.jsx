@@ -6,7 +6,7 @@ import ShareButton from './components/shareButton'
 import Help  from './components/help';
 import './app.css'
 
-const socket = io(process.env.SERVER);
+const socket = io("https://youtubparty.herokuapp.com");
 
 export default class app extends Component {
     constructor(props) {
