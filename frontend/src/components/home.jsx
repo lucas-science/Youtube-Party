@@ -7,7 +7,7 @@ import HomePhone from './components/homePhone';
 import './home.css'
 import './components/home-responsive.css'
 
-const socket = io(process.env.SERVER);
+const socket = io("https://youtubparty.herokuapp.com");
 
 export default class home extends Component {
     constructor(props) {
