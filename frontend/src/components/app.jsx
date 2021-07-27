@@ -6,7 +6,7 @@ import ShareButton from './components/shareButton'
 import Help  from './components/help';
 import './app.css'
 
-const socket = io('http://localhost:4000');
+const socket = io(process.env.SERVER);
 
 export default class app extends Component {
     constructor(props) {

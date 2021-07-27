@@ -7,7 +7,7 @@ import HomePhone from './components/homePhone';
 import './home.css'
 import './components/home-responsive.css'
 
-const socket = io('http://localhost:4000');
+const socket = io(process.env.SERVER);
 
 export default class home extends Component {
     constructor(props) {
