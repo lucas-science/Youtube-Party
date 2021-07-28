@@ -280,7 +280,7 @@ export default class app extends Component {
                             </div>
                         </div>
                         <ShareButton
-                            url={"http://localhost:3000/app/"+this.props.match.params.roomid+"/"+this.props.match.params.vurl}
+                            url={"https://youtubeparty.vercel.app/app/"+this.props.match.params.roomid+"/"+this.props.match.params.vurl}
                         />
                     </div>
                 </div>
@@ -366,7 +366,7 @@ export default class app extends Component {
                                 </div>
                             </div>
                             <ShareButton
-                                url={"http://localhost:3000/app/"+this.props.match.params.roomid+"/"+this.props.match.params.vurl}
+                                url={"https://youtubeparty.vercel.app/app/"+this.props.match.params.roomid+"/"+this.props.match.params.vurl}
                             />
                         </div>
                     </div>
