@@ -8,7 +8,7 @@ In this way they can react in real time and together to the video with a chat.
 ## How use Youtube Party
 The tutorial of 'How use Youtube Party' is [here](https://youtubeparty.vercel.app/about)
 
-<img src="https://cdn.discordapp.com/attachments/701530343932690522/869550288141451264/unknown.png" alt="drawing" width="60%"/>
+<img src="https://user-images.githubusercontent.com/52750644/127693344-00b11055-a7aa-48a6-bc9f-6a5c3cd090ae.png" alt="drawing" width="60%"/>
 
 ## How it work 
 
