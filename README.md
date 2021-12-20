@@ -14,6 +14,6 @@ The tutorial of 'How use Youtube Party' is [here](https://youtubeparty.vercel.ap
 
 Youtube party use a system of room, where peoples choose a video to watch and he can talk in a chat integrate of the app.
 
-<img src="https://user-images.githubusercontent.com/52750644/127151707-470558c1-8d1c-4969-a879-98a648925c0f.png" alt="drawing" width="60%" />
+<img src="https://user-images.githubusercontent.com/52750644/146800963-6d483d4e-902a-4286-bd6a-6ce0fd50dee8.png" alt="drawing" width="60%"/>
 
 *created by @lucas-science*
