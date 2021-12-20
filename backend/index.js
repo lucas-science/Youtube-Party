@@ -63,7 +63,6 @@ io.on("connection", (socket) => {
 
     socket.on('sendMessage', (mess, room) => {
         console.log(mess)
-
         socket.broadcast.to(room).emit('message', mess);
     })
     socket.on('CheckRoomName', room => {
