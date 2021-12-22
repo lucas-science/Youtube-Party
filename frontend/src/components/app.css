@@ -114,7 +114,7 @@
 }
 
 .app-part-gauche {
-    width: 80%;
+    width: 87.5%;
     display: flex;
     flex-direction: column;
 }
@@ -141,7 +141,7 @@
 }
 
 .app-part-droite {
-    width: 20%;
+    width: 12.5%;
     display: flex;
     flex-direction: column;
     justify-content: space-around !important;
